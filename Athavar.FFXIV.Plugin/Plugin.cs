@@ -5,19 +5,13 @@
 
 namespace Athavar.FFXIV.Plugin;
 
-using Athavar.FFXIV.Plugin.AutoSpear;
-using Athavar.FFXIV.Plugin.Cheat;
 using Athavar.FFXIV.Plugin.Click;
 using Athavar.FFXIV.Plugin.Common;
 using Athavar.FFXIV.Plugin.Common.Manager.Interface;
-using Athavar.FFXIV.Plugin.CraftQueue;
 using Athavar.FFXIV.Plugin.CraftSimulator.Models;
 using Athavar.FFXIV.Plugin.Dps;
-using Athavar.FFXIV.Plugin.Instancinator;
-using Athavar.FFXIV.Plugin.Macro;
 using Athavar.FFXIV.Plugin.OpcodeWizard;
 using Athavar.FFXIV.Plugin.UI;
-using Athavar.FFXIV.Plugin.Yes;
 using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
@@ -86,12 +80,6 @@ public sealed class Plugin : IDalamudPlugin
            .AddSingleton(_ => new WindowSystem("Athavar's Toolbox"))
            .AddCommon()
            .AddClick()
-           .AddMacroModule()
-           .AddYesModule()
-           .AddInstancinatorModule()
-           .AddAutoSpearModule()
-           .AddCheatModule()
-           .AddCraftQueueModule()
            .AddDps()
            .AddOpcodeWizard()
 #if DEBUG

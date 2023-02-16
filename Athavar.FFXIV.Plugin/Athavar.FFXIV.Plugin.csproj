@@ -83,16 +83,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.AutoSpear\Athavar.FFXIV.Plugin.AutoSpear.csproj" />
-    <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Cheat\Athavar.FFXIV.Plugin.Cheat.csproj" />
     <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Click\Athavar.FFXIV.Plugin.Click.csproj" />
     <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Common\Athavar.FFXIV.Plugin.Common.csproj" />
-    <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.CraftQueue\Athavar.FFXIV.Plugin.CraftQueue.csproj" />
     <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.CraftSimulator\Athavar.FFXIV.Plugin.CraftSimulator.csproj" />
     <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Dps\Athavar.FFXIV.Plugin.Dps.csproj" />
-    <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Instancinator\Athavar.FFXIV.Plugin.Instancinator.csproj" />
-    <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Macro\Athavar.FFXIV.Plugin.Macro.csproj" />
     <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.OpcodeWizard\Athavar.FFXIV.Plugin.OpcodeWizard.csproj" />
-    <ProjectReference Include="..\src\Athavar.FFXIV.Plugin.Yes\Athavar.FFXIV.Plugin.Yes.csproj" />
   </ItemGroup>
 </Project>
