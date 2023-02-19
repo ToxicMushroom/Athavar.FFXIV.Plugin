@@ -513,6 +513,8 @@ internal class QueueTab : Tab
         ImGui.ProgressBar((float)this.craftingSimulation.AvailableCP / this.craftingSimulation.CurrentStats.CP, new System.Numerics.Vector2(ImGui.GetContentRegionAvail().X - 5, ImGui.GetTextLineHeight()), $"{this.craftingSimulation.AvailableCP} / {this.craftingSimulation.CurrentStats.CP}");
         ImGui.PopStyleColor();
 
+        ImGuiEx.TextColorCondition(this.craftingSimulation.CurrentStats.Level == 90, ImGuiColors.HealerGreen, $"Level: {this.craftingSimulation.CurrentStats.Level}");
+
         ImGui.Separator();
 
         if (this.simulationResult is null || this.selectedRotation is null)
@@ -542,6 +544,8 @@ internal class QueueTab : Tab
         ImGui.PushStyleColor(ImGuiCol.PlotHistogram, quality >= 1 ? ImGuiColors.ParsedBlue : ImGuiColors.TankBlue);
         ImGui.ProgressBar(quality, new System.Numerics.Vector2(ImGui.GetContentRegionAvail().X - 5, ImGui.GetTextLineHeight()), qualityText);
         ImGui.PopStyleColor();
+    
+        ImGuiEx.TextColorCondition(this.simulationResult?.Success == true, ImGuiColors.DalamudGrey, $"{this.simulationResult?.FailCause?.AsText()}");
 
         ImGui.SetNextItemWidth(-1);
         ImGui.Separator();

@@ -2,6 +2,9 @@
 // Copyright (c) Athavar. All rights reserved.
 // Licensed under the GPL-3.0 license. See LICENSE file in the project root for full license information.
 // </copyright>
+
+using Dalamud.Logging;
+
 namespace Athavar.FFXIV.Plugin.Common.Manager;
 
 using System.Runtime.InteropServices;
@@ -63,7 +66,7 @@ internal class GearsetManager : IGearsetManager, IDisposable
     public unsafe void UpdateGearsets()
     {
         this.Gearsets.Clear();
-
+        PluginLog.LogDebug($"5");
         if (!this.dalamudServices.ClientState.IsLoggedIn)
         {
             return;
@@ -71,6 +74,7 @@ internal class GearsetManager : IGearsetManager, IDisposable
 
         var instance = RaptureGearsetModule.Instance();
         var levelArray = PlayerState.Instance()->ClassJobLevelArray;
+        PluginLog.LogDebug($"{levelArray->ToString()}");
         for (var i = 0; i < 100; ++i)
         {
             var gearsetEntryPtr = instance->Gearset[i];
@@ -93,7 +97,8 @@ internal class GearsetManager : IGearsetManager, IDisposable
             this.GetItemStats(ref stats, &gearsetEntryPtr->RightLeft);
             this.GetItemStats(ref stats, &gearsetEntryPtr->RingRight);
             this.GetItemStats(ref stats, &gearsetEntryPtr->SoulStone);
-            this.Gearsets.Add(new Gearset(Marshal.PtrToStringUTF8((nint)gearsetEntryPtr->Name) ?? "<???>", gearsetEntryPtr->ID, gearsetEntryPtr->ClassJob, (byte)levelArray[gearsetEntryPtr->ClassJob], stats, (&gearsetEntryPtr->SoulStone)->ItemID != 0));
+
+            this.Gearsets.Add(new Gearset(Marshal.PtrToStringUTF8((nint)gearsetEntryPtr->Name) ?? "<???>", gearsetEntryPtr->ID, gearsetEntryPtr->ClassJob, 90, stats, (&gearsetEntryPtr->SoulStone)->ItemID != 0));
         }
     }
 

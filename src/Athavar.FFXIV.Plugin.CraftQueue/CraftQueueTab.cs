@@ -105,6 +105,8 @@ internal class CraftQueueTab : Tab, ICraftQueueTab
                 ImGui.TextUnformatted($"Control: {this.current.Control}");
                 ImGui.TextUnformatted($"Craftsmanship: {this.current.Craftsmanship}");
                 ImGui.TextUnformatted($"CP: {this.current.CP}");
+                ImGui.TextUnformatted($"JOB: {this.current.Name}");
+                ImGui.TextUnformatted($"LVL: {this.current.JobLevel}");
             }
         }
     }

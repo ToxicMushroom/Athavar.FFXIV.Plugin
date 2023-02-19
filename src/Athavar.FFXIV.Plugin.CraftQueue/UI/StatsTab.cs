@@ -2,6 +2,9 @@
 // Copyright (c) Athavar. All rights reserved.
 // Licensed under the GPL-3.0 license. See LICENSE file in the project root for full license information.
 // </copyright>
+
+using Dalamud.Logging;
+
 namespace Athavar.FFXIV.Plugin.CraftQueue.UI;
 
 using Athavar.FFXIV.Plugin.Common.Manager.Interface;
@@ -39,6 +42,7 @@ internal class StatsTab : Tab
 
         void DrawCraftingGearsetTable()
         {
+            PluginLog.LogDebug($"5");
             ImGui.TextUnformatted("Gearsets need to be saved with all Materia for the correct detection.");
             if (!ImGui.BeginTable("##gearset-table", 8))
             {

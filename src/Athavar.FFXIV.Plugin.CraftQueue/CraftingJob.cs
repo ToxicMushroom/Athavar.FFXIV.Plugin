@@ -286,7 +286,8 @@ internal class CraftingJob
 
         if (buffApplyStats is null)
         {
-            throw new CraftingJobException("Something is wrong with your stats. please recheck the gearsets.");
+            return 0;
+            // throw new CraftingJobException("Something is wrong with your stats. please recheck the gearsets.");
         }
 
         if (buffApplyStats == BuffApplyTest.None)
